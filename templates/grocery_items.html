@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Einkaufsliste</title>
+</head>
+<body>
+    <h1>Einkaufsliste</h1>
+    <ul>
+        {% for grocery_item in grocery_items %}
+            <li>
+                {{ grocery_item.name }} ({{ grocery_item.quantity }})
+                <a href="#" class="btn btn-primary btn-sm">Bearbeiten</a>
+                <a href="#" class="btn btn-danger btn-sm">Löschen</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_grocery_item') }}" class="btn btn-success">Neues Element hinzufügen</a>
+</body>
+</html>
